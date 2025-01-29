@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Client Choices</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Client Choices</h1>
+    <div id="data-table">
+        <?php
+        // معلومات الاتصال بقاعدة البيانات
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "mosaicclient";
+
+        // إنشاء اتصال بقاعدة البيانات
+        $conn = new mysqli($servername, $username, $password, $dbname);
+
+        // التحقق من الاتصال
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        // استعلام للحصول على الاختيارات
+        $sql = "SELECT client_name, choice_1, choice_2, choice_3, created_at FROM choices";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            // عرض البيانات في جدول
+            echo "<table border='1'>";
+            echo "<tr><th>Client Name</th><th>Choice 1</th><th>Choice 2</th><th>Choice 3</th><th>Date</th></tr>";
+            while($row = $result->fetch_assoc()) {
+                echo "<tr>";
+                echo "<td>" . htmlspecialchars($row["client_name"]) . "</td>";
+                echo "<td>" . htmlspecialchars($row["choice_1"]) . "</td>";
+                echo "<td>" . htmlspecialchars($row["choice_2"]) . "</td>";
+                echo "<td>" . htmlspecialchars($row["choice_3"]) . "</td>";
+                echo "<td>" . htmlspecialchars($row["created_at"]) . "</td>";
+                echo "</tr>";
+            }
+            echo "</table>";
+        } else {
+            echo "<p>No choices recorded yet.</p>";
+        }
+
+        // إغلاق الاتصال
+        $conn->close();
+        ?>
+    </div>
+</body>
+</html>

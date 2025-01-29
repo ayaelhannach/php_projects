@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!-- saved from url=(0033)https://mosaic-factory.wuaze.com/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Questionnaire</title>
+    <link rel="stylesheet" href="./Client Questionnaire_files/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Client Questionnaire</h1>
+        <form id="clientForm" action="https://mosaic-factory.wuaze.com/index.php" method="POST">
+            <!-- Client Information -->
+            <fieldset class="fieldset">
+                <legend class="legend">Client Information</legend>
+                <label for="full_name">Full Name:</label>
+                <input type="text" id="full_name" name="full_name" required="">
+            </fieldset>
+
+            <!-- Measurements -->
+            <fieldset class="fieldset">
+                <legend class="legend">Measurements</legend>
+                <label for="length">Length(cm):</label>
+                <input type="number" id="length" name="length" step="0.01" required="">
+                <label for="width">Width(cm):</label>
+                <input type="number" id="width" name="width" step="0.01" required="">
+                <label for="thickness">Thickness(cm):</label>
+                <input type="number" id="thickness" name="thickness" step="0.01" required="">
+            </fieldset>
+
+            <!-- Preferred Finish -->
+            <fieldset class="fieldset">
+                <legend class="legend">Preferred Finish</legend>
+                <label><input type="radio" name="finish" value="polished" required=""> Polished</label>
+                <label><input type="radio" name="finish" value="honed"> Honed</label>
+                <label><input type="radio" name="finish" value="brushed"> Brushed</label>
+            </fieldset>
+
+            <!-- Edge Types -->
+            <fieldset class="fieldset">
+                <legend class="legend">Edge Types</legend>
+                <label for="edge_count">Number of Edges:</label>
+                <input type="number" id="edge_count" name="edge_count">
+                <label for="edge_type">Edge Type:</label>
+                <select id="edge_type" name="edge_type">
+                    <option value="E1">E1</option>
+                    <option value="E5">E5</option>
+                    <option value="E7">E7</option>
+                    <option value="B5">B5</option>
+                    <option value="B10">B10</option>
+                    <option value="Other">Other</option>
+                </select>
+            </fieldset>
+
+            <!-- Fake Edges -->
+            <fieldset class="fieldset">
+                <legend class="legend">Fake Edges</legend>
+                <label for="has_fake_edge">Do you want a fake edge?</label>
+                <input type="checkbox" id="has_fake_edge" name="has_fake_edge">
+                <div id="fake_edge_details" style="display: none;">
+                    <label for="fake_edge_position">Position:</label>
+                    <select id="fake_edge_position" name="fake_edge_position">
+                        <option value="Bottom">Bottom</option>
+                        <option value="Top">Top</option>
+                    </select>
+                    <label for="fake_edge_width">Width(cm):</label>
+                    <input type="number" id="fake_edge_width" name="fake_edge_width" step="0.01">
+                    <label for="fake_edge_height">Height(cm):</label>
+                    <input type="number" id="fake_edge_height" name="fake_edge_height" step="0.01">
+                    <label for="fake_edge_thickness">Thickness(cm):</label>
+                    <input type="number" id="fake_edge_thickness" name="fake_edge_thickness" step="0.01">
+                    <label for="fake_edge_type">Fake Edge Type:</label>
+                    <select id="fake_edge_type" name="fake_edge_type">
+                        <option value="E1">E1</option>
+                        <option value="E5">E5</option>
+                        <option value="E7">E7</option>
+                        <option value="B5">B5</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <!-- Cutouts -->
+            <fieldset class="fieldset">
+                <legend class="legend">Cutouts</legend>
+                <label for="sink_type">Sink Type:</label>
+                <input type="text" id="sink_type" name="sink_type">
+                <label for="sink_brand">Sink Brand (optional):</label>
+                <input type="text" id="sink_brand" name="sink_brand">
+                <label for="sink_reference">Sink Reference (optional):</label>
+                <input type="text" id="sink_reference" name="sink_reference">
+                <label for="sink_installation_plan">Sink Installation Plan:</label>
+                <textarea id="sink_installation_plan" name="sink_installation_plan"></textarea>
+                <fieldset class="small-fieldset">
+                    <legend>Sink Measurements</legend>
+                    <label for="sink_width">Sink Width(cm):</label>
+                    <input type="number" id="sink_width" name="sink_width" step="0.01">
+                    <label for="sink_height">Sink Height(cm):</label>
+                    <input type="number" id="sink_height" name="sink_height" step="0.01">
+                    <label for="sink_depth">Sink Depth(cm):</label>
+                    <input type="number" id="sink_depth" name="sink_depth" step="0.01">
+                </fieldset>
+                <label for="hob_type">Hob Type:</label>
+                <input type="text" id="hob_type" name="hob_type">
+                <label for="hob_brand">Hob Brand (optional):</label>
+                <input type="text" id="hob_brand" name="hob_brand">
+                <label for="hob_reference">Hob Reference (optional):</label>
+                <input type="text" id="hob_reference" name="hob_reference">
+                <fieldset class="small-fieldset">
+                    <legend>Hob Measurements</legend>
+                    <label for="hob_height">Hob Height(cm):</label>
+                    <input type="number" id="hob_height" name="hob_height" step="0.01">
+                    <label for="hob_width">Hob Width(cm):</label>
+                    <input type="number" id="hob_width" name="hob_width" step="0.01">
+                    <label for="hob_depth">Hob Depth(cm):</label>
+                    <input type="number" id="hob_depth" name="hob_depth" step="0.01">
+                </fieldset>
+            </fieldset>
+
+            <!-- Tap Holes -->
+            <fieldset class="fieldset">
+                <legend class="legend">Tap Holes</legend>
+                <label for="number_of_holes">Number of Tap Holes:</label>
+                <input type="number" id="number_of_holes" name="number_of_holes">
+            </fieldset>
+
+            <!-- Faucets -->
+            <fieldset class="fieldset">
+                <legend class="legend">Faucets</legend>
+                <label for="faucet_brand">Faucet Brand (optional):</label>
+                <input type="text" id="faucet_brand" name="faucet_brand">
+                <label for="faucet_reference">Faucet Reference (optional):</label>
+                <input type="text" id="faucet_reference" name="faucet_reference">
+            </fieldset>
+
+            <!-- Drainage -->
+            <fieldset class="fieldset">
+                <legend class="legend">Drainage</legend>
+                <label><input type="radio" name="drainage" value="grooves" required=""> Drainage Grooves</label>
+                <label><input type="radio" name="drainage" value="Ramped"> Ramped Drainage</label>
+            </fieldset>
+
+            <!-- Materials -->
+            <fieldset class="fieldset">
+                <legend class="legend">Materials</legend>
+                <label for="material_type">Material Type:</label>
+                <input type="text" id="material_type" name="material_type" value="Terrazzo Reference" readonly="">
+            </fieldset>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('has_fake_edge').addEventListener('change', function() {
+            var fakeEdgeDetails = document.getElementById('fake_edge_details');
+            fakeEdgeDetails.style.display = this.checked ? 'block' : 'none';
+        });
+    </script>
+
+
+
+
+</body></html>

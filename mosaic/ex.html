@@ -1,0 +1,730 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Questionnaire</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <div class="header">
+        <img src="https://mosaicfactory.com/images2/commun/MosaicFactory_header.webp" alt="Mosaic Factory" class="logo">
+        <strong>Mosaic Factory</strong><sup>®</sup>
+        <h1>Client Questionnaire</h1>
+    </div>
+    <div class="content">
+        <button id="toggleWorkPlanButton" class="toggle-btn">
+            ▼ Work Plan
+        </button>
+        <div id="workPlanContent" class="extra-content" style="display: none;">
+            <div class="image-checkbox-row">
+                <div class="image-checkbox">
+                    <img src="Single-Row-Kitchen.jpg" alt="Single Row Kitchen">
+                    <input type="checkbox" id="singleRowKitchen" name="kitchen" value="Single-Row-Kitchen">
+                    <label for="singleRowKitchen">Single Row Kitchen</label>
+                </div>
+                <div class="image-checkbox">
+                    <img src="L-Shape-Kitchen.jpg" alt="L-Shape Kitchen">
+                    <input type="checkbox" id="lShapeKitchen" name="kitchen" value="L-Shape-Kitchen">
+                    <label for="lShapeKitchen">L-Shape Kitchen</label>
+                </div>
+                <div class="image-checkbox">
+                    <img src="U-Shape-Kitchen.png" alt="U-Shape Kitchen" class="UShape">
+                    <input type="checkbox" id="uShapeKitchen" name="kitchen" value="U-Shape-Kitchen">
+                    <label for="uShapeKitchen">U-Shape Kitchen</label>
+                </div>
+            </div>
+            <div id="largeImageContainer" class="large-image-container" style="display: none;">
+                <img id="largeImage" src="" alt="Large View">
+                <div id="dimensionsInputs" class="dimensions-inputs">
+                    <div class="input-row">
+                        <div>
+                            <label for="LengthInput">(1) (cm):</label>
+                            <input type="number" id="LengthInput" name="ength" placeholder="Enter Length">
+                        </div>
+                        <div>
+                            <label for="widthInput">(2) (cm):</label>
+                            <input type="number" id="widthInput" name="width" placeholder="Enter Width">
+                        </div>
+                        
+                    </div><br>
+                    <div class="input-container">
+                        <!-- Button -->
+                        <button class="toggleButton" id="toggleIntegratedSinkButton" style="color:#2064a8;"><strong>&gt;</strong> Integrated Sink</button>
+                    
+                        <!-- Fields to be shown when the button is clicked -->
+                        <div id="integratedSinkContent" class="hidden-content" style="display: none;">
+                            <div class="input-row">
+                                <div>
+                                    <label for="sinkLengthInput">(3) (cm):</label>
+                                    <input type="number" id="sinkLengthInput" name="sink_length" placeholder="Sink Length">
+                                </div>
+                                <div>
+                                    <label for="sinkWidthInput">(4) (cm):</label>
+                                    <input type="number" id="sinkWidthInput" name="sink_width" placeholder="Sink Width">
+                                </div>
+                                <div>
+                                    <label for="sinkDepthInput">(5) (cm):</label>
+                                    <input type="number" id="sinkDepthInput" name="sink_depth" placeholder="Sink Depth">
+                                </div><br>
+                                <div>
+                                    <label for="sinkTypeInput">Sink Type:</label>
+                                    <input type="text" id="sinkTypeInput" name="sink_type" placeholder="Sink Type">
+                                </div>
+                                <div>
+                                    <label for="sinkNumberInput">Number of Sinks:</label>
+                                    <input type="number" id="sinkNumberInput" name="sink_number" placeholder="Number of Sinks">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-container">
+                        <button class="toggleButton" id="toggleCutoutButton" style="color:#2064a8;"><strong>&gt;</strong> Cutout</button>
+                        <div id="cutoutContent" class="hidden-content" style="display: none;">
+                            <div class="sink-container">
+                                <button class="toggleButtonSink" id="toggleSinksButton" style="color:#4da9e7;"><strong>&bull;</strong> Sink</button>
+                                <div id="SinkContent" class="hidden-content-Sink" style="display: none;">
+                                    <div class="input-row">
+                                        <div>
+                                            <label for="SinkLengthInput">Sink Length (cm):</label>
+                                            <input type="number" id="sinkLengthInput" name="Sink_length" placeholder="Enter Sink Length">
+                                        </div>
+                                        <div>
+                                            <label for="SinkWidthInput">Sink Width (cm):</label>
+                                            <input type="number" id="SinkWidthInput" name="Sink_width" placeholder="Enter Sink Width">
+                                        </div>
+                                        <!-- <div>
+                                            <label for="SinkEdgeInput">Finished Edge:</label>
+                                            <input type="text" id="SinkEdgeInput" name="Sink_Edge" placeholder="Sink Edge">
+                                        </div> -->
+                                        
+                                    </div>
+                                </div>
+                            </div><br>
+                            
+                            <div class="hob-container">
+                                <button class="toggleButtonHob" id="toggleHobButton" style="color:#4da9e7;"><strong>&bull;</strong> Hob</button>
+                                <div id="hobContent" class="hidden-content-hob" style="display: none;">
+                                    <div class="input-row">
+                                        <div>
+                                            <label for="hobLengthInput">(6)(cm):</label>
+                                            <input type="number" id="hobLengthInput" name="hob_Length" placeholder="Enter Hob Length">
+                                        </div>
+                                        <div>
+                                            <label for="hobWidthInput">(7) (cm):</label>
+                                            <input type="number" id="hobWidthInput" name="hob_width" placeholder="Enter Hob Width">
+                                        </div>
+                                        <div>
+                                            <label for="hobTypeInput">Hob Type:</label>
+                                            <input type="text" id="hobTypeInput" name="hob_type" placeholder="Hob Type">
+                                        </div>
+                                        <div>
+                                            <label for="hobNumberInput">Number Of Hobs:</label>
+                                            <input type="number" id="hobNumberInput" name="hob_number" placeholder="Number of Hobs">
+                                        </div>
+                                    </div><br>
+                                    <div class="input-row">
+                                        <div>
+                                            <label for="NumberHoleInput">Number Of Tap Holes :</label>
+                                            <input type="number" id="NumberHoleInput" name="number_hole" placeholder="Number Of Tap Holes">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    
+                    
+                </div>
+            </div><br><br>
+            <div class="edge">
+                <div id="edgeImages" class="images-edge">
+                    <h3 class="typeEdge">Type Edge:</h3>
+                    <div class="image-edge">
+                        <input type="checkbox" id="edge1" name="edge1">
+                        <label for="edge1">
+                            <strong>E3</strong>
+                            <img src="E3.jpg" alt="Edge E3">
+                        </label>
+                    </div>
+                   
+                    <div class="image-edge">
+                        <input type="checkbox" id="edge2" name="edge2">
+                        <label for="edge2" >
+                            <strong>E10</strong>
+                            <img src="E10.jpg" alt="Edge E10">
+                        </label>
+                    </div><br><br>
+                    <div class="image-edge" id="b15">
+                        <input type="checkbox" id="edge3" name="edge3">
+                        <label for="edge3">
+                            <strong>B15</strong>
+                            <img src="B15.jpg" alt="Edge B15">
+                        </label>
+                    </div>
+                </div>
+                <div id="edgeplace" class="edge-place">
+                    <h3 class="PlaceEdge">Place Edge:</h3>
+                    
+                    <div class="grouplacedge">
+                        <div class="Edge-Place">
+                            <input type="checkbox" id="place1" name="place1">
+                            <strong>(A)</strong>
+                        </div>
+                        <div class="Edge-Place">
+                            <input type="checkbox" id="place2" name="place2">
+                            <strong>(B)</strong>
+                        </div>
+                        <div class="Edge-Place">
+                            <input type="checkbox" id="place3" name="place3">
+                            <strong>(C)</strong>
+                        </div>
+                        <div class="Edge-Place">
+                            <input type="checkbox" id="place4" name="place4">
+                            <strong>(D)</strong>
+                        </div>
+                    </div>
+                </div>
+                <div id="edgeplaceLShap" class="edge-placeLShap">
+                    <h3 class="PlaceEdgeLshap">Place Edge:</h3>
+                    
+                    <div class="grouplacedgeLshap">
+                        <div class="Edge-PlaceLshap">
+                            <input type="checkbox" id="place1Lshap" name="place1Lshap">
+                            <strong>(A)</strong>
+                        </div>
+                        <div class="Edge-PlaceLshap">
+                            <input type="checkbox" id="place2Lshap" name="place2Lshap">
+                            <strong>(B)</strong>
+                        </div>
+                        <div class="Edge-PlaceLshap">
+                            <input type="checkbox" id="place3Lshap" name="place3Lshap">
+                            <strong>(C)</strong>
+                        </div>
+                        <div class="Edge-PlaceLshap">
+                            <input type="checkbox" id="place4Lshap" name="place5Lshap">
+                            <strong>(D)</strong>
+                        </div>
+                        <div class="Edge-PlaceLshap">
+                            <input type="checkbox" id="place5Lshap" name="place5Lshap">
+                            <strong>(E)</strong>
+                        </div>
+                        <div class="Edge-PlaceLshap">
+                            <input type="checkbox" id="place6Lshap" name="place6Lshap">
+                            <strong>(F)</strong>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <br><br>
+            <div id="terrazzoMaterial" class="terrazzo-material">
+                <h5>Terrazzo Reference Material:</h5>
+                <input type="text" placeholder="Terrazzo Ref">
+                <h5>Which finich do you prefer ?  </h5>
+                <div class="terrazzo-options">
+                    <div class="terrazzo-option">
+                        <input type="checkbox" id="terrazzoPolished" name="terrazzoMaterial" value="Polished">
+                        <label for="terrazzoPolished">
+                            <img src="Terrazzo-Polished.png" alt="Terrazzo Polished" class="terrazzo-image" onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
+                            <img src="polished.png"class="terrazzo-image-small">
+                            <span class="terrazzo-label"><strong>Polished</strong></span>
+                        </label>
+                    </div>
+                    <div class="terrazzo-option">
+                        <input type="checkbox" id="terrazzoHoned" name="terrazzoMaterial" value="Honed">
+                        <label for="terrazzoHoned">
+                            <img src="Terrazzo-Honed.png" alt="Terrazzo Honed" class="terrazzo-image" onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
+                            <img src="honed.png"class="terrazzo-image-small">
+                            <span class="terrazzo-label"><strong>Honed</strong></span>
+                        </label>
+                    </div>
+                    <div class="terrazzo-option">
+                        <input type="checkbox" id="terrazzoBrushed" name="terrazzoMaterial" value="Brushed">
+                        <label for="terrazzoBrushed">
+                            <img src="Terrazzo-Brushed.png" alt="Terrazzo Brushed" class="terrazzo-image" onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
+                            <img src="brushed.png"class="terrazzo-image-small">
+                            <span class="terrazzo-label"><strong>Brushed</strong></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <button id="toggleSinkButton" class="toggle-btn">
+            ▼ Sinks
+        </button>
+        
+        
+        <div id="sinkOptions">
+            <div class="image-checkbox-sinks">
+                <div class="sinks-checkbox">
+                    <img src="squar-sink.jpg" alt="Sink 1" class="small-sink-image">
+                    <input type="checkbox" id="sinkOption1">
+                    <label for="sinkOption1">Square Sink</label>
+                </div>
+        
+                <div class="sinks-checkbox">
+                    <img src="circular-sink.png" alt="Sink 2" class="small-sink-image">
+                    <input type="checkbox" id="sinkOption2">
+                    <label for="sinkOption2">Circular Sink</label>
+                </div>
+            </div>
+        
+            <div id="sinkImageContainer">
+                <img id="largeSinkImage" src="" alt="Large Sink" style="display: none;" />
+                <div class="sinkOption" id="sinks">
+                    <!-- Top Surface Button -->
+                    <div class="sink-button-container">
+                        <button class="sink-btn" onclick="toggleTopSurface('topSurface1')"  style="color:#2064a8;"><strong>&gt;</strong>Top Surface</button>
+                        <div id="topSurface1" class="sink-inputs" style="display: none;">
+                            <label for="length1">Length:</label><br>
+                            <input type="number" id="length1" name="length1">
+                            <label for="width1">Width:</label><br>
+                            <input type="number" id="width1" name="width1">
+                        </div>
+                    </div>
+        
+                    <!-- Rectangular Sink Button -->
+                    <div class="sink-button-container">
+                        <button class="sink-btn" onclick="toggleRectangularSink('rectangularSink1')" style="color:#2064a8;"><strong>&gt;</strong>Rectangular Sink</button>
+                        <div id="rectangularSink1" class="sink-inputs" style="display: none;">
+                            <label for="rectLength1">Length:</label><br>
+                            <input type="number" id="rectLength1" name="rectLength1">
+                            <label for="rectWidth1">Width:</label><br>
+                            <input type="number" id="rectWidth1" name="rectWidth1">
+                            <label for="thickness1">Thickness:</label><br>
+                            <input type="number" id="thickness1" name="thickness1">
+                        </div>
+                    </div>
+        
+                    <!-- Extra Button -->
+                    <div class="sink-button-container">
+                        <button class="sink-btn" onclick="toggleExtra('extra1')" style="color:#2064a8;"><strong>&gt;</strong>Extra</button>
+                        <div id="extra1" class="sink-inputs" style="display: none;">
+                            <label for="tapHoles1">Number of Tap Holes:</label><br>
+                            <input type="number" id="tapHoles1" name="tapHoles1">
+                            <label for="extraHoles1">Number of Extra Sink Holes:</label><br>
+                            <input type="number" id="extraHoles1" name="extraHoles1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><br><br>
+        <button id="toggleTablesButton" class="toggle-btn">
+            ▼ Tables
+        </button>
+        <div id="tablesContent" class="extraTables-content" style="display: none;">
+            <div class="image-checkbox-tables">
+                <div class="tables-checkbox">
+                    <img src="circular-table.jpg" alt="Circular Table">
+                    <input type="checkbox" id="circulartable" name="table" value="Circular-Table">
+                    <label for="circulartable">Circular Table</label>
+                </div>
+                <div class="tables-checkbox">
+                    <img src="square.jpeg" alt="Square Table">
+                    <input type="checkbox" id="squaretable" name="table" value="Square-Table">
+                    <label for="squaretable">Square Table</label>
+                </div>
+            </div>
+            <div id="largeTableContainer" class="large-table-container" style="display: none;">
+                <img id="largeTableImage" src="" alt="Large Table View">
+                <div class="tablesInputs">
+                    <div id="circularTableInputs" class="dimensions-inputs-tables" style="display: none;">
+                        <div class="input-row-tables">
+                            <div>
+                                <label for="diameterInputTables">D (cm):</label>
+                                <input type="number" id="diameterInputTables" name="diameter" placeholder="Enter Diameter">
+                            </div>
+                            <div>
+                                <label for="thicknessInputCircular">T (cm):</label>
+                                <input type="number" id="thicknessInputCircular" name="thickness" placeholder="Enter Thickness">
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                    <div id="squareTableInputs" class="dimensions-inputs-tables" style="display: none;">
+                        <div class="input-row-tables">
+                            <div>
+                                <label for="squareHeightInput">L (cm):</label>
+                                <input type="number" id="squareHeightInput" name="square_height" placeholder="Enter Length">
+                            </div>
+                            <div>
+                                <label for="squareWidthInput">W (cm):</label>
+                                <input type="number" id="squareWidthInput" name="square_width" placeholder="Enter Width">
+                            </div>
+                            <div>
+                                <label for="thicknessInputSquare">T (cm):</label>
+                                <input type="number" id="thicknessInputSquare" name="thickness" placeholder="Enter Thickness">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="edgeImagesTables" class="images-edge">
+                        <h3 class="typeEdge">Type Edge:</h3>
+                        <div class="image-edge">
+                            <input type="checkbox" id="edge1Tables" name="edge1Tables">
+                            <label for="edge1Tables">
+                                <strong class="strong">E3</strong>
+                                <img src="E3.jpg" alt="Edge E3">
+                            </label>
+                        </div>
+                        <div class="image-edge">
+                            <input type="checkbox" id="edge2Tables" name="edge2Tables">
+                            <label for="edge2Tables">
+                                <strong class="strong">E10</strong>
+                                <img src="E10.jpg" alt="Edge E10">
+                            </label>
+                        </div>
+                        <div class="image-edge">
+                            <input type="checkbox" id="edge3Tables" name="edge3Tables">
+                            <label for="edge3Tables">
+                                <strong class="strong">B15</strong>
+                                <img src="B15.jpg" alt="Edge B15">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+            
+        <script>
+            // Toggle Work Plan visibility
+            document.getElementById('toggleWorkPlanButton').addEventListener('click', function() {
+                var workPlanContent = document.getElementById('workPlanContent');
+                if (workPlanContent.style.display === 'none' || workPlanContent.style.display === '') {
+                    workPlanContent.style.display = 'block';
+                    this.innerHTML = '▲ Work Plan'; // Change button text to up arrow
+                } else {
+                    workPlanContent.style.display = 'none';
+                    this.innerHTML = '▼ Work Plan'; // Change button text to down arrow
+                }
+            });
+            
+            document.addEventListener('DOMContentLoaded', () => {
+    const kitchenCheckboxes = document.querySelectorAll('.image-checkbox input[type="checkbox"]');
+    const edgeCheckboxes = document.querySelectorAll('#edgeImages input[type="checkbox"]');
+    const largeImageContainer = document.getElementById('largeImageContainer');
+    const edgeImages = document.getElementById('edgeImages');
+    const edgeplace = document.getElementById('edgeplace');
+    const edgeplaceLShap = document.getElementById('edgeplaceLShap');
+    // Ensure edgeplace is hidden by default
+    edgeplace.style.display = 'none';
+    edgeplaceLShap.style.display = 'none';
+    kitchenCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            if (this.checked) {
+                // Uncheck all other checkboxes
+                kitchenCheckboxes.forEach(cb => {
+                    if (cb !== this) cb.checked = false;
+                });
+
+                // Show large image container and edge options
+                largeImageContainer.style.display = 'block';
+                edgeImages.style.display = 'block';
+                
+                // Show edgeplace when a kitchen option is selected
+                edgeplace.style.display = 'block';
+                edgeplaceLShap.style.display = 'block';
+                // Set the large image based on the selected kitchen layout
+                const largeImage = largeImageContainer.querySelector('img');
+                switch (this.id) {
+                    case 'singleRowKitchen':
+                        largeImage.src = 'Single-Row.png';
+                        edgeplaceLShap.style.display = 'none';
+                        break;
+                    case 'lShapeKitchen':
+                        largeImage.src = 'L-Shape.png';
+                        edgeplace.style.display = 'none';
+                        
+                        break;
+                    case 'uShapeKitchen':
+                        largeImage.src = 'U-Shape.png';
+                        edgeplace.style.display = 'none';
+                        edgeplaceLShap.style.display = 'none';
+                        break;
+                }
+            } else {
+                // Hide everything if no kitchen layout is selected
+                largeImageContainer.style.display = 'none';
+                edgeImages.style.display = 'none';
+                // Hide edgeplace if no kitchen layout is selected
+                edgeplace.style.display = 'none';
+                edgeplaceLShap.style.display = 'none';
+            }
+        });
+    });
+    edgeCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            if (this.checked) {
+                // Uncheck all other edge checkboxes
+                edgeCheckboxes.forEach(cb => {
+                    if (cb !== this) cb.checked = false;
+                });
+                
+                
+            }
+        });
+    });
+    
+});
+
+    const terrazzoCheckboxes = document.querySelectorAll('.terrazzo-option input[type="checkbox"]');
+    terrazzoCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            if (this.checked) {
+                // Uncheck all other terrazzo checkboxes
+                terrazzoCheckboxes.forEach(otherCheckbox => {
+                    if (otherCheckbox !== this) otherCheckbox.checked = false;
+                });
+            }
+        });
+    });
+
+
+            
+            document.getElementById('toggleTablesButton').addEventListener('click', function() {
+                var tablesContent = document.getElementById('tablesContent');
+                if (tablesContent.style.display === 'none' || tablesContent.style.display === '') {
+                    tablesContent.style.display = 'block';
+                    this.innerHTML = '▲ Tables'; // Change button text to up arrow
+                } else {
+                    tablesContent.style.display = 'none';
+                    this.innerHTML = '▼ Tables'; // Change button text to down arrow
+                }
+            });
+            
+            // JavaScript to handle table checkbox changes
+            const tableCheckboxes = document.querySelectorAll('.image-checkbox-tables input[type="checkbox"]');
+            const largeTableImage = document.getElementById('largeTableImage');
+            const largeTableContainer = document.getElementById('largeTableContainer');
+            const circularTableInputs = document.getElementById('circularTableInputs');
+            const squareTableInputs = document.getElementById('squareTableInputs');
+            
+            tableCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    // Deselect all other checkboxes when one is checked
+                    tableCheckboxes.forEach(cb => {
+                        if (cb !== this) cb.checked = false;
+                    });
+            
+                    // Show the large image container and update image based on the checked checkbox
+                    if (this.checked) {
+                        largeTableContainer.style.display = 'block';
+                        if (this.id === 'circulartable') {
+                            largeTableImage.src = 'circular-table-m.jpg';
+                            circularTableInputs.style.display = 'block';
+                            squareTableInputs.style.display = 'none';
+                        } else if (this.id === 'squaretable') {
+                            largeTableImage.src = 'square-m.png';
+                            squareTableInputs.style.display = 'block';
+                            circularTableInputs.style.display = 'none';
+                        }
+                    } else {
+                        largeTableContainer.style.display = 'none';
+                        circularTableInputs.style.display = 'none';
+                        squareTableInputs.style.display = 'none';
+                    }
+                });
+            });
+            
+            document.getElementById('toggleIntegratedSinkButton').addEventListener('click', function() {
+                var integratedSinkContent = document.getElementById('integratedSinkContent');
+                if (integratedSinkContent.style.display === 'none' || integratedSinkContent.style.display === '') {
+                    integratedSinkContent.style.display = 'block';
+                    this.innerHTML = '<strong>&lt;</strong> Integrated Sink'; // Change button text to left arrow
+                } else {
+                    integratedSinkContent.style.display = 'none';
+                    this.innerHTML = '<strong>&gt;</strong> Integrated Sink'; // Change button text to right arrow
+                }
+            });
+            
+            document.getElementById('toggleCutoutButton').addEventListener('click', function() {
+                var cutoutContent = document.getElementById('cutoutContent');
+                if (cutoutContent.style.display === 'none' || cutoutContent.style.display === '') {
+                    cutoutContent.style.display = 'block';
+                    this.innerHTML = '<strong>&lt;</strong> Cutout'; // Change button text to left arrow
+                } else {
+                    cutoutContent.style.display = 'none';
+                    this.innerHTML = '<strong>&gt;</strong> Cutout'; // Change button text to right arrow
+                }
+            });
+            
+            const toggleHobButton = document.getElementById("toggleHobButton");
+            const hobContent = document.getElementById("hobContent");
+            
+            toggleHobButton.addEventListener("click", function () {
+                hobContent.style.display = hobContent.style.display === "none" ? "block" : "none";
+            });
+            
+            const toggleSinkButton = document.getElementById("toggleSinksButton");
+            const sinkContent = document.getElementById("SinkContent");
+            
+            // Function to toggle visibility
+            function toggleVisibility(element) {
+                element.style.display = (element.style.display === "none" || element.style.display === "") ? "block" : "none";
+            }
+            
+            // Add click event listener to the button
+            toggleSinkButton.addEventListener("click", function () {
+                toggleVisibility(sinkContent);
+            });
+            
+            document.getElementById('toggleSinkButton').addEventListener('click', function() {
+    var sinkOptions = document.getElementById('sinkOptions');
+    if (sinkOptions.style.display === 'none' || sinkOptions.style.display === '') {
+        sinkOptions.style.display = 'block';
+        this.innerHTML = '▲ Sinks'; // Change button text to up arrow
+    } else {
+        sinkOptions.style.display = 'none';
+        this.innerHTML = '▼ Sinks'; // Change button text to down arrow
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const sinkCheckboxes = document.querySelectorAll('.sinks-checkbox input[type="checkbox"]');
+    const sinkImageContainer = document.getElementById('sinkImageContainer');
+    const largeSinkImage = document.getElementById('largeSinkImage');
+    const sinkOption1 = document.getElementById('sinkOption1');
+    const sinkOption2 = document.getElementById('sinkOption2');
+    sinkImageContainer.style.display = 'none';
+    // Add event listeners to checkboxes
+    sinkCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            if (sinkOption1.checked || sinkOption2.checked) {
+                sinkImageContainer.style.display = 'block'; // Show the container when any checkbox is checked
+                
+            } else {
+                sinkImageContainer.style.display = 'none'; // Hide the container if no checkboxes are checked
+            }
+        });
+    });
+});
+
+function toggleTopSurface(id) {
+    var element = document.getElementById(id);
+    if (element.style.display === "none") {
+        element.style.display = "block";
+    } else {
+        element.style.display = "none";
+    }
+}
+
+function toggleRectangularSink(id) {
+    var element = document.getElementById(id);
+    if (element.style.display === "none") {
+        element.style.display = "block";
+    } else {
+        element.style.display = "none";
+    }
+}
+
+function toggleExtra(id) {
+    var element = document.getElementById(id);
+    if (element.style.display === "none") {
+        element.style.display = "block";
+    } else {
+        element.style.display = "none";
+    }
+}
+
+        const sinkOptions = document.querySelectorAll('#sinkOptions input[type="checkbox"]');
+        const largeSinkImage = document.getElementById('largeSinkImage');
+
+        sinkOptions.forEach((checkbox) => {
+        checkbox.addEventListener('change', () => {
+            sinkOptions.forEach((otherCheckbox) => {
+            if (otherCheckbox !== checkbox) {
+                otherCheckbox.checked = false;
+            }
+            });
+
+        
+            // if (checkbox.checked) {
+            // if (checkbox.id === 'sinkOption1') {
+            //     largeSinkImage.src = 'squar-sink-l.png';
+            // } else if (checkbox.id === 'sinkOption2') {
+            //     largeSinkImage.src = 'circular-sink-l.png';
+            // }
+            // largeSinkImage.style.display = 'block';
+            // } else {
+            // largeSinkImage.style.display = 'none';
+            // }
+        });
+        });
+        
+
+
+        //         function calculatePrice(width, height, sinkHeight, sinkWidth, hobHeight, hobWidth) {
+//     // Define a base price per square centimeter
+//     const basePricePerCm2 = 0.1; // Example price, adjust as needed
+
+//     // Calculate area of the kitchen
+//     const area = (width * height) + (sinkHeight * sinkWidth) + (hobHeight * hobWidth);
+
+//     // Calculate price
+//     const price = area * basePricePerCm2;
+
+//     // Return the calculated price
+//     return price.toFixed(2); // Return price rounded to two decimal places
+// }
+
+// document.querySelectorAll('#dimensionsInputs input').forEach(input => {
+//     input.addEventListener('input', function() {
+//         // Get the current values of the inputs
+//         const width = parseFloat(document.getElementById('widthInput').value) || 0;
+//         const height = parseFloat(document.getElementById('heightInput').value) || 0;
+//         const sinkHeight = parseFloat(document.getElementById('sinkHeightInput').value) || 0;
+//         const sinkWidth = parseFloat(document.getElementById('sinkWidthInput').value) || 0;
+//         const hobHeight = parseFloat(document.getElementById('hobHeightInput').value) || 0;
+//         const hobWidth = parseFloat(document.getElementById('hobWidthInput').value) || 0;
+
+//         // Calculate the price
+//         const price = calculatePrice(width, height, sinkHeight, sinkWidth, hobHeight, hobWidth);
+
+//         // Display the price
+//         document.getElementById('price').textContent = price;
+//     });
+// });
+
+
+
+
+function zoomIn(element) {
+    element.style.transform = 'scale(3)'; // Scale up image by 20%
+}
+
+function zoomOut(element) {
+    element.style.transform = 'scale(1)'; // Return image to its original size
+}
+
+// Select all checkbox elements inside the edgeImagesTables container
+const edgeCheckboxes = document.querySelectorAll('#edgeImagesTables input[type="checkbox"]');
+
+// Add an event listener to each checkbox
+edgeCheckboxes.forEach((checkbox) => {
+    checkbox.addEventListener('change', function() {
+        // If this checkbox is checked, uncheck all other checkboxes
+        if (this.checked) {
+            edgeCheckboxes.forEach((otherCheckbox) => {
+                if (otherCheckbox !== this) {
+                    otherCheckbox.checked = false;
+                }
+            });
+        }
+    });
+});
+
+
+    
+    
+    </script>
+</body>
+</html>

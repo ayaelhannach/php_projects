@@ -1,0 +1,726 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F5F5F5; /* Light Gray background */
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFFFF; /* White background */
+    padding: 20px;
+    border-bottom: 3px solid #DCDCDC; /* Gainsboro border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    width: 60px; /* Adjusted size for better visibility */
+    margin-right: 20px; /* Space between logo and text */
+}
+
+.header strong {
+    font-size: 1.4em; /* Larger font size */
+    color: #2C3E50; /* Dark blue-gray color for text */
+}
+
+.header sup {
+    font-size: 0.8em;
+}
+
+h1 {
+    font-size: 1.8em; /* Larger header text */
+    color: #2C3E50; /* Dark blue-gray color */
+    margin: 0;
+    font-weight: 700; /* Bold font weight */
+    text-align: center;
+    flex-grow: 1;
+}
+
+.content {
+    padding: 30px; /* Increased padding */
+    max-width: 1200px; /* Maximum width for content */
+    margin: 0 auto; /* Center content */
+}
+
+.toggle-btn {
+    background-color: #3498DB; /* Warm blue for buttons */
+    border: none;
+    font-size: 1.3em; /* Larger font size */
+    cursor: pointer;
+    margin-bottom: 15px; /* Space below the button */
+    color: #FFFFFF; /* White text */
+    padding: 12px 24px; /* Larger buttons with padding */
+    border-radius: 8px; /* Rounded corners */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transition effects */
+}
+
+.toggle-btn:hover {
+    background-color: #2980B9; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+
+
+.extra-content {
+    display: none; /* Initially hidden */
+    padding: 20px; /* Padding for extra content */
+    background-color: #FFFFFF; /* White background */
+    border-top: 2px solid #DCDCDC; /* Gainsboro border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    
+}
+.extra-content{
+    height:auto;
+}
+
+/* Style for image checkbox row */
+.image-checkbox-row {
+    display: flex;
+    justify-content: space-between; /* Distribute images evenly */
+    gap: 15px; /* Reduced space between images */
+}
+
+/* Style for image-checkbox container */
+.image-checkbox {
+    display: flex;
+    flex-direction: row; /* Arrange items in a row */
+    align-items: center; /* Center align items */
+    text-align: center;
+    margin-bottom: 15px; /* Reduced space below each section */
+}
+
+/* Style for images within the checkbox container */
+.image-checkbox img {
+    width: 160px; /* Further reduced size */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Reduced space between image and checkbox */
+     
+}
+
+/* Style for checkboxes within the container */
+.image-checkbox input {
+    margin-right: 6px; /* Reduced space between checkbox and label */
+}
+
+/* Style for labels within the checkbox container */
+.image-checkbox label {
+    margin: 0; /* Remove margins */
+}
+
+/* Style for large image container */
+.large-image-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px; /* Reduced space between the image and the inputs */
+    margin-top: 15px; /* Reduced top margin */
+    
+}
+
+/* Style for images within the large image container */
+.large-image-container img {
+    width: 47%; /* Adjust width as needed */
+    height: auto; /* Specific height value */
+    border: 1px solid #DCDCDC;
+    padding: 10px;
+    background-color: #FFFFFF;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for dimensions inputs */
+.dimensions-inputs {
+    width: 580px; /* Reduced width */
+    height: auto;
+   
+    padding: 15px; /* Reduced padding */
+    position: absolute;
+    left: 620px; /* Adjusted positioning */
+    top: 370px; /* Adjusted positioning */
+}
+
+/* Style for input rows in dimensions inputs */
+.input-row {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Reduced gap between items */
+}
+
+/* Style for labels within dimensions inputs */
+.dimensions-inputs label {
+    font-weight: 600;
+    color: #020101;
+    font-size: 0.95em; /* Reduced font size */
+    min-width: 120px; /* Increased minimum width to align with the longest label */
+    text-align: right;
+}
+
+/* Style for number inputs */
+input[type="number"] {
+    width: 80%;
+    max-width: 80%; /* Further reduced max-width */
+    height: 20px; /* Reduced height */
+    padding: 8px 12px; /* Reduced padding */
+    border: 2px solid #BDC3C7;
+    border-radius: 6px; /* Slightly reduced border radius */
+    font-size: 0.9em; /* Reduced font size */
+    color: #2C3E50;
+    background-color: #FFFFFF;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Reduced shadow effect */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Style for focused number inputs */
+input[type="number"]:focus {
+    border-color: #3498DB;
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5); /* Reduced focus shadow */
+}
+
+
+
+.typeEdge {
+    color: #3498DB;
+    margin-bottom: 30px; /* Space below the heading */
+    margin-left: 30px;
+    
+}
+
+
+.image-edge {
+    max-width: 250px;
+    display: block;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    
+}
+
+.image-edge img {
+    max-width: 200px;
+    border-radius: 8px;
+    margin: 5px;
+}
+
+#edgeImages {
+    display: none;
+    border: 1px solid wheat;
+    padding: 10px;
+    
+}
+#b15{
+    transform: translateY(-38px);
+}
+
+/* Improve the title */
+.images-edge h3 {
+    color: #2064a8; /* Dark blue text color */
+    margin-bottom: 20px; /* Increased space below the title */
+}
+.edge{
+    display: flex;
+    gap: 20px;
+    
+}
+#edgeplace{
+    display: none;
+    border: 1px solid wheat;
+    padding: 5px;
+    max-width: 235px;
+    
+}
+#edgeplace h3{
+    color: #2064a8; /* Dark blue text color */
+    margin-bottom: 0;
+}
+#edgeplace strong{
+    color: #4da9e7;
+}
+.Edge-Place{
+    width: 300px;
+    display: block;
+    margin-bottom: 50px;
+    margin-left: 30px;
+}
+.grouplacedge{
+    margin-top: 45px;
+}
+
+
+#edgeplaceLShap{
+    display: none;
+    border: 1px solid wheat;
+    padding: 5px;
+    max-width: 235px;
+    
+}
+#edgeplaceLShap h3{
+    color: #2064a8; /* Dark blue text color */
+    margin-bottom: 0;
+}
+#edgeplaceLShap strong{
+    color: #4da9e7;
+}
+.Edge-PlaceLshap{
+    width: 300px;
+    display: block;
+    margin-bottom: 30px;
+    margin-left: 30px;
+}
+.grouplacedgeLshap{
+    margin-top: 45px;
+}
+
+
+
+.extraTables-content {
+    display: none; /* Initially hidden */
+    padding: 20px; /* Padding for extra content */
+    background-color: #FFFFFF; /* White background */
+    border-top: 2px solid #DCDCDC; /* Gainsboro border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.image-checkbox-tables {
+    display: flex;
+    justify-content: space-between; /* Distribute images evenly */
+    gap: 20px; /* Space between images */
+}
+
+.tables-checkbox {
+    display: flex;
+    flex-direction: row; /* Arrange items in a row */
+    align-items: center; /* Center align items */
+    text-align: center;
+    margin-bottom: 20px; /* Space below each section */
+}
+
+.tables-checkbox img {
+    width: 120px; /* Adjust size */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 20px; /* Space between image and checkbox */
+    border-radius: 8px; /* Rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for scaling and shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect for a more realistic look */
+}
+
+.tables-checkbox img:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow effect on hover */
+}
+
+.tables-checkbox input {
+    margin-right: 8px; /* Space between checkbox and label */
+}
+
+.tables-checkbox label {
+    margin: 0; /* Remove margins */
+}
+
+#largeTableImage {
+    width: 480px; /* Adjust size as needed */
+    height: auto;
+    display: block;
+    margin-top: 20px;
+}
+
+.large-table-container {
+    display: flex;
+    align-items: flex-start; /* Ensure items align at the top */
+    gap: 20px; /* Space between the image and the inputs */
+    margin-top: 30px;
+}
+
+#largeTableImage {
+    max-width: 50%; /* Adjust size as needed */
+    height: auto;
+    border: 2px solid #DCDCDC;
+    padding: 15px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tablesInputs {
+    width: 45%; /* Adjusted width to be wider */
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    margin-left: 600px;
+    transform: translateY(-300px);
+}
+
+.input-row-tables {
+    display: flex;
+    gap: 10px; /* Adjust gap between inputs */
+    align-items: center; /* Align items vertically in the center */
+    margin-bottom: 15px; /* Space below each row */
+}
+
+.tablesInputs label {
+    font-weight: 600;
+    color: #3498DB;
+    font-size: 1em;
+    min-width: 100px;
+    text-align: right;
+}
+
+input[type="number"],
+input[type="text"] {
+    width: 80%;
+    max-width: 75%;
+    height: 20px;
+    padding: 10px 15px;
+    border: 2px solid #BDC3C7;
+    border-radius: 8px;
+    font-size: 1em;
+    color: #2C3E50;
+    background-color: #FFFFFF;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="number"]:focus,
+input[type="text"]:focus {
+    border-color: #3498DB;
+    outline: none;
+    box-shadow: 0 0 6px rgba(52, 152, 219, 0.5);
+}
+input::placeholder {
+    font-size: 0.75em; 
+    color: #8e9294; 
+}
+
+.small-sink-image {
+    width: 100px;
+    height: auto;
+    cursor: pointer;
+    margin: 5px;
+}
+
+#sinkOptions{
+    display: none;
+    padding: 20px; 
+    background-color: #FFFFFF; /* White background */
+    border-top: 2px solid #DCDCDC; /* Gainsboro border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+.image-checkbox-sinks{
+    display: flex;
+    justify-content: space-between; /* Distribute images evenly */
+    gap: 20px; /* Space between images */
+}
+.sinks-checkbox{
+    display: flex;
+    flex-direction: row; /* Arrange items in a row */
+    align-items: center; /* Center align items */
+    text-align: center;
+    margin-bottom: 20px; /* Space below each section */
+}
+.sinks-checkbox img{
+    width: 120px; /* Adjust size */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 20px; /* Space between image and checkbox */
+}
+
+.sinks-checkbox input{
+    margin-right: 8px;
+}
+.sinks-checkbox label{
+    margin: 0;
+}
+#largeSinkImage{
+    width: 480px; /* Adjust size as needed */
+    height: auto;
+    display: block;
+    margin-top: 20px;
+}
+
+#largeSinkImage{
+    max-width: 50%; /* Adjust size as needed */
+    height: auto;
+    border: 2px solid #DCDCDC;
+    padding: 15px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+#largeSinkImage {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.sinkOption {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sink-button-container {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin: auto;
+}
+
+.sink-btn {
+    
+    background: none;
+    border: none;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.sink-btn:hover {
+    transform: scale(1.05);
+}
+
+
+.sink-inputs {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+
+.sink-inputs label {
+    font-weight: bold;
+    color: #333;
+    align-self: center;
+    flex-shrink: 0; 
+    min-width: 100px; 
+}
+
+.sink-inputs input {
+    flex-grow: 1;
+    width: 80%;
+    max-width: 75%;
+    height: 20px;
+    padding: 10px 15px;
+    border: 2px solid #BDC3C7;
+    border-radius: 8px;
+    font-size: 1em;
+    color: #2C3E50;
+    background-color: #FFFFFF;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* Style for the Material Type section */
+.terrazzo-material {
+    background-color: #f4f4f4;
+    padding: 5px; /* Further reduced padding */
+    border-radius: 6px; /* Slightly reduced border radius */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Further reduced shadow effect */
+    max-width: 350px; /* Further reduced width */
+    margin: auto; /* Center the container */
+    margin-left: 20px;
+}
+
+/* Style for the <h3> heading */
+.terrazzo-material h5 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9em; /* Further reduced font size */
+    margin-bottom: 8px; /* Further reduced bottom margin */
+    color: #333;
+}
+
+/* Style for the select dropdown */
+.terrazzo-material select {
+    width: 100%;
+    padding: 6px; /* Further reduced padding */
+    font-size: 0.8em; /* Further reduced font size */
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); /* Further reduced shadow effect */
+    margin-bottom: 10px; /* Further reduced bottom margin */
+}
+
+/* Style for the checkbox options */
+.terrazzo-options {
+    display: flex;
+    flex-direction: column;
+    gap: 6px; /* Further reduced gap between items */
+}
+
+.terrazzo-option {
+    display: flex;
+    align-items: center;
+    gap: 6px; /* Further reduced gap between image and text */
+    max-width: 100%; /* Fixed width */
+}
+
+.terrazzo-image {
+    width: 60px; /* Further reduced image size */
+    height: 50px; /* Further reduced image height */
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.terrazzo-option .terrazzo-label {
+    font-size: 0.8em; /* Further reduced font size */
+    color: #555;
+}
+
+/* Style for checkboxes */
+.terrazzo-option input[type="checkbox"] {
+    display: inline-block;
+    margin-right: 6px; /* Further reduced right margin */
+}
+
+.terrazzo-option label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px; /* Further reduced gap between items */
+    padding: 2px; /* Further reduced padding */
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+
+/* Style for selected checkbox */
+.terrazzo-option input[type="checkbox"]:checked + label {
+    background-color: #e0f7fa;
+    border-color: #00796b;
+}
+
+.terrazzo-image-small {
+    width: 25px; /* Further reduced small image size */
+}
+
+.typeEdge {
+    color: #3498DB;
+    margin-bottom: 30px; /* Space below the heading */
+    margin-left: 30px;
+}
+
+
+.image-edge {
+    width: 500px;
+    display: block;
+    margin-bottom: 20px;
+    margin-left: 30px;
+}
+
+.image-edge img {
+    max-width: 200px;
+    border-radius: 8px;
+    margin: 10px;
+}
+
+.strong{
+    color: black;
+}
+
+
+/* Improve the title */
+.images-edge h3 {
+    color: #2064a8; /* Dark blue text color */
+    margin-bottom: 20px; /* Increased space below the title */
+}
+
+
+.input-container {
+    background-color: #f9f9f9; /* Light background color */
+    padding: 20px;            /* Add some padding around the content */
+    border-radius: 8px;       /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin-bottom: 20px;      /* Space below the container */
+}
+
+.toggleButton {
+    background: none;
+    border: none;
+    font-size: 17px;  
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+.toggleButton:hover{
+    transform: scale(1.05);
+}
+
+
+.hidden-content {
+    margin-top: 20px;
+}
+
+.input-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.input-row div {
+    flex: 1;
+    min-width: 200px;
+}
+.toggleButtonHob{
+    background: none;
+    border: none;
+    font-size: 15px;  
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    transition: color 0.3s ease;
+    margin-left: 35px;
+}
+.toggleButtonHob:hover{
+    background: none;
+    border: none;
+    font-size: 16px;  
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+.hidden-content-hob{
+    margin-top: 20px;
+}
+
+.toggleButtonSink{
+    background: none;
+    border: none;
+    font-size: 15px;  
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    transition: color 0.3s ease;
+    margin-left: 35px;
+}
+.toggleButtonSink:hover{
+    background: none;
+    border: none;
+    font-size: 16px;  
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+.hidden-content-Sink{
+    margin-top: 20px;
+    display: none;
+}
